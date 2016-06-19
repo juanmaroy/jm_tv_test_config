@@ -1,0 +1,2 @@
+primary: {linux_path: /Volumes/ShotgunRender/, mac_path: /Volumes/ShotgunFiles/, windows_path: 'C:\SHOTGUN_PROJECTS'}
+render: {linux_path: /Volumes/ShotgunRender/, mac_path: /Volumes/ShotgunRender/, windows_path: 'c:\SHOTGUN_RENDER\'}
