@@ -503,11 +503,6 @@ engines:
 # Frameworks are automatically installed when apps are installed and udpated.
 #
 frameworks:
-  tk-framework-softimageqt_v1.0.1:
-    location:
-      name: tk-framework-softimageqt
-      type: app_store
-      version: v1.0.1
   tk-framework-shotgunutils_v3.x.x:
     location:
       version: v3.0.4

@@ -77,9 +77,12 @@ engines:
         hook_post_publish: default
         hook_primary_pre_publish: default
         hook_primary_publish: default
-        hook_scan_scene: default
-        hook_secondary_pre_publish: default
-        hook_secondary_publish: default
+        # Modificación para que publique la cámara
+        hook_scan_scene: tut_scan_scene_tk-maya_camera.py
+        # Modificación para que publique la cámara
+        hook_secondary_pre_publish: tut_secondary_pre_publish_tk-maya.py
+        # Modificación para que publique la cámara
+        hook_secondary_publish: tut_secondary_publish_tk-maya.py
         hook_thumbnail: default
         location:
           version: v0.7.4
@@ -91,7 +94,21 @@ engines:
         primary_publish_template: maya_shot_publish
         primary_scene_item_type: work_file
         primary_tank_type: Maya Scene
-        secondary_outputs: []
+        # Aquí añadimos la publicación de la cámara
+        secondary_outputs: [
+        - description: 'Publish a camera'
+          display_group: Cameras
+          display_name: Camera
+          icon: 'icons/camera.png'
+          name: camera
+          publish_template: maya_shot_camera
+          required: false
+          scene_item_type: camera
+          selected: false
+          publish_group: false
+          group_name: default
+          tank_type: 'Camera'
+        ]
         template_work: maya_shot_work
       tk-multi-screeningroom: '@launch_screeningroom'
       tk-multi-setframerange:
@@ -531,11 +548,6 @@ engines:
 # Frameworks are automatically installed when apps are installed and udpated.
 #
 frameworks:
-  tk-framework-softimageqt_v1.0.1:
-    location:
-      name: tk-framework-softimageqt
-      type: app_store
-      version: v1.0.1
   tk-framework-shotgunutils_v3.x.x:
     location:
       version: v3.0.4
